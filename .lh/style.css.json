@@ -1,0 +1,70 @@
+{
+    "sourceFile": "style.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1736623790446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736623821030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,91 @@\n+*,\n+*::before,\n+*::after {\n+  box-sizing: border-box;\n+  margin: 0;\n+  padding: 0;\n+}\n+\n+body {\n+  height: 100vh;\n+  display: grid;\n+  place-items: center;\n+  padding: 5rem;\n+  font-size: 16px;\n+}\n+\n+:root {\n+  --card-width: 15rem;\n+  --card-height: 20rem;\n+\n+  /* Updated to use the image */\n+  --front-background: url('RemoteOwlImage.png') no-repeat center/cover;\n+  --back-background: rgba(240, 240, 240, 1);\n+  /* Light grey for the back */\n+}\n+\n+.card {\n+  font-family: Verdana, Geneva, Tahoma, sans-serif;\n+  width: var(--card-width);\n+  height: var(--card-height);\n+  perspective: 1000px;\n+  /* Ensures 3D effect */\n+}\n+\n+.card__content {\n+  position: relative;\n+  display: grid;\n+  place-items: center;\n+  padding: 5rem;\n+  transition: transform 1s ease-in-out;\n+  transform-style: preserve-3d;\n+  text-align: center;\n+}\n+\n+.card:hover .card__content {\n+  transform: rotateY(0.5turn);\n+}\n+\n+.card__front,\n+.card__back {\n+  position: absolute;\n+  top: 0;\n+  bottom: 0;\n+  left: 0;\n+  right: 0;\n+  display: grid;\n+  place-items: center;\n+  align-content: center;\n+  padding: 2rem;\n+  backface-visibility: hidden;\n+  height: var(--card-height);\n+  width: var(--card-width);\n+  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.3);\n+}\n+\n+.card__front {\n+  background: var(--front-background);\n+}\n+\n+.card__back {\n+  transform: rotateY(0.5turn);\n+  background: var(--back-background);\n+}\n+\n+.card__title {\n+  color: white;\n+  font-size: 1.5rem;\n+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n+}\n+\n+.card__subtitle {\n+  color: white;\n+  font-size: 1rem;\n+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n+}\n+\n+.card__body {\n+  color: #333;\n+  font-size: 1rem;\n+  text-align: justify;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736624031019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,94 +87,5 @@\n .card__body {\n   color: #333;\n   font-size: 1rem;\n   text-align: justify;\n-}\n-*,\n-*::before,\n-*::after {\n-  box-sizing: border-box;\n-  margin: 0;\n-  padding: 0;\n-}\n-\n-body {\n-  height: 100vh;\n-  display: grid;\n-  place-items: center;\n-  padding: 5rem;\n-  font-size: 16px;\n-}\n-\n-:root {\n-  --card-width: 15rem;\n-  --card-height: 20rem;\n-\n-  /* Updated to use the image */\n-  --front-background: url('RemoteOwlImage.jpg') no-repeat center/cover;\n-  --back-background: rgba(240, 240, 240, 1); /* Light grey for the back */\n-}\n-\n-.card {\n-  font-family: Verdana, Geneva, Tahoma, sans-serif;\n-  width: var(--card-width);\n-  height: var(--card-height);\n-  perspective: 1000px; /* Ensures 3D effect */\n-}\n-\n-.card__content {\n-  position: relative;\n-  display: grid;\n-  place-items: center;\n-  padding: 5rem;\n-  transition: transform 1s ease-in-out;\n-  transform-style: preserve-3d;\n-  text-align: center;\n-}\n-\n-.card:hover .card__content {\n-  transform: rotateY(0.5turn);\n-}\n-\n-.card__front,\n-.card__back {\n-  position: absolute;\n-  top: 0;\n-  bottom: 0;\n-  left: 0;\n-  right: 0;\n-  display: grid;\n-  place-items: center;\n-  align-content: center;\n-  padding: 2rem;\n-  backface-visibility: hidden;\n-  height: var(--card-height);\n-  width: var(--card-width);\n-  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.3);\n-}\n-\n-.card__front {\n-  background: var(--front-background);\n-}\n-\n-.card__back {\n-  transform: rotateY(0.5turn);\n-  background: var(--back-background);\n-}\n-\n-.card__title {\n-  color: white;\n-  font-size: 1.5rem;\n-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n-}\n-\n-.card__subtitle {\n-  color: white;\n-  font-size: 1rem;\n-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n-}\n-\n-.card__body {\n-  color: #333;\n-  font-size: 1rem;\n-  text-align: justify;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736624311702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,8 +72,9 @@\n   background: var(--back-background);\n }\n \n .card__title {\n+  transform: translateY(200px);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624325908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,8 +79,9 @@\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n+  transform: translateY(200px);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624380985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,15 +73,17 @@\n }\n \n .card__title {\n   transform: translateY(200px);\n+  transform: translateZ(200px);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n   transform: translateY(200px);\n+  transform: translateZ(200px);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624389819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,10 +72,10 @@\n   background: var(--back-background);\n }\n \n .card__title {\n+  transform: translateZ(200px);\n   transform: translateY(200px);\n-  transform: translateZ(200px);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624398996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,18 +72,16 @@\n   background: var(--back-background);\n }\n \n .card__title {\n-  transform: translateZ(200px);\n   transform: translateY(200px);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n   transform: translateY(200px);\n-  transform: translateZ(200px);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624442775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,16 +72,16 @@\n   background: var(--back-background);\n }\n \n .card__title {\n-  transform: translateY(200px);\n+  transform: translateZ(200px);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n-  transform: translateY(200px);\n+  transform: translateZ(200px);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624478925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   background: var(--front-background);\n }\n \n .card__back {\n-  transform: rotateY(0.5turn);\n+  transform: rotateZ(0.5turn);\n   background: var(--back-background);\n }\n \n .card__title {\n"
+                },
+                {
+                    "date": 1736624486811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   background: var(--front-background);\n }\n \n .card__back {\n-  transform: rotateZ(0.5turn);\n+  transform: rotateY(0.5turn);\n   background: var(--back-background);\n }\n \n .card__title {\n"
+                },
+                {
+                    "date": 1736624493244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n-  transform: translateZ(200px);\n+  transform: translateX(200px);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n"
+                },
+                {
+                    "date": 1736624650012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,22 +72,23 @@\n   background: var(--back-background);\n }\n \n .card__title {\n-  transform: translateZ(200px);\n+  transform: translateZ(2rem);\n   color: white;\n   font-size: 1.5rem;\n   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n }\n \n .card__subtitle {\n-  transform: translateZ(200px);\n+  transform: translateZ(2rem);\n   color: white;\n   font-size: 1rem;\n   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n }\n \n .card__body {\n+  transform: translateZ(2rem);\n   color: #333;\n   font-size: 1rem;\n   text-align: justify;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1736624713061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n   place-items: center;\n   align-content: center;\n   padding: 2rem;\n   backface-visibility: hidden;\n+  transform-style: preserve-3d;\n   height: var(--card-height);\n   width: var(--card-width);\n   box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.3);\n }\n"
+                }
+            ],
+            "date": 1736623790446,
+            "name": "Commit-0",
+            "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  height: 100vh;\n  display: grid;\n  place-items: center;\n  padding: 5rem;\n  font-size: 16px;\n}\n\n:root {\n  --card-width: 15rem;\n  --card-height: 20rem;\n\n  /* Updated to use the image */\n  --front-background: url('RemoteOwlImage.jpg') no-repeat center/cover;\n  --back-background: rgba(240, 240, 240, 1); /* Light grey for the back */\n}\n\n.card {\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\n  width: var(--card-width);\n  height: var(--card-height);\n  perspective: 1000px; /* Ensures 3D effect */\n}\n\n.card__content {\n  position: relative;\n  display: grid;\n  place-items: center;\n  padding: 5rem;\n  transition: transform 1s ease-in-out;\n  transform-style: preserve-3d;\n  text-align: center;\n}\n\n.card:hover .card__content {\n  transform: rotateY(0.5turn);\n}\n\n.card__front,\n.card__back {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: grid;\n  place-items: center;\n  align-content: center;\n  padding: 2rem;\n  backface-visibility: hidden;\n  height: var(--card-height);\n  width: var(--card-width);\n  box-shadow: 0 0 1.5px rgba(0, 0, 0, 0.3);\n}\n\n.card__front {\n  background: var(--front-background);\n}\n\n.card__back {\n  transform: rotateY(0.5turn);\n  background: var(--back-background);\n}\n\n.card__title {\n  color: white;\n  font-size: 1.5rem;\n  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);\n}\n\n.card__subtitle {\n  color: white;\n  font-size: 1rem;\n  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);\n}\n\n.card__body {\n  color: #333;\n  font-size: 1rem;\n  text-align: justify;\n}\n"
+        }
+    ]
+}
